@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is compiling the proposal 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Convert digramm to pdf
+        uses: Burnett01/actions-drawio@1.2
+        with:
+          src: src/proposal/Roadmap.drawio
+          dest: out/proposal/Roadmap.pdf
